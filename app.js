@@ -25,7 +25,7 @@ db.ResetPassword.belongsTo(db.customers);
 db.customers.hasMany(db.fileurl);
 db.fileurl.belongsTo(db.customers);
 
-db.sequelize.sync({}).then(() => {
+db.sequelize.sync({}) .then(() => {
   console.log("ok report")
 }).catch((error) => {
   console.log(error)
@@ -48,6 +48,7 @@ app.use('/password', password_route)
 // app.use((req,res)=>{
 // 	res.sendFile(path.join(__dirname,`public/${req.url}`))
 // })  
+
 
 app.listen(3001);
 
